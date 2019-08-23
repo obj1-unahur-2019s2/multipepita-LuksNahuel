@@ -38,10 +38,37 @@ object mijo {
 		}
 }
 object canelones {
-	var base = 20
-	method ponerSalsa() {base += 5}
-	method sacarSalsa() {base -= 5}
-	method ponerQueso() {base += 7}
-	method sacarQueso() {base -= 7}
-	method energiaPorGramo() {return base}
+	/*var tieneSalsa = false
+	var tieneQueso = false
+	method ponerSalsa() {tieneSalsa = true}
+	method sacarSalsa() {tieneSalsa = false}
+	method ponerQueso() {tieneQueso = true}
+	method sacarQueso() {tieneQueso = false}
+	method energiaPorGramo() {
+		if(tieneSalsa && tieneQueso) {
+			return 32
+		} else if(tieneSalsa) {
+			return 25
+		} else if(tieneQueso) {
+			return 27
+		} else {
+			return 20
+		}
+	}*/
+	var tieneSalsa = false
+	var tieneQueso = false
+	method ponerSalsa() { tieneSalsa = true }
+	method sacarSalsa() { tieneSalsa = false }
+	method ponerQueso() { tieneQueso = true }
+	method sacarQueso() { tieneQueso = false }
+	method energiaPorGramo() {
+		var energia = 20
+		if(tieneSalsa) {
+			energia +=  5
+		}
+		if(tieneQueso) {
+			energia += 7
+		}
+		return energia
+	}
 }
