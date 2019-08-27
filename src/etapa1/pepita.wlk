@@ -1,4 +1,3 @@
-
 object pepita {
 	var energia = 0
 	method energia() { return energia }
