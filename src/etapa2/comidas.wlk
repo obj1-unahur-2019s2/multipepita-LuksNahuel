@@ -29,13 +29,18 @@ object sorgo {
 
 // despues, agregar mijo y canelones
 object mijo {
-	var estaMojado
-	method mojarse() {estaMojado = 15}
-	method secarse() {estaMojado = 20}
+	var estaMojado = false
+	method mojarse() {estaMojado = true}
+	method secarse() {estaMojado = false}
 	method energiaPorGramo() {
-		return estaMojado
+		if(estaMojado){
+			return 15 
+		} else {
+			return 20
 		}
+	}
 }
+
 object canelones {
 	/*var tieneSalsa = false
 	var tieneQueso = false
