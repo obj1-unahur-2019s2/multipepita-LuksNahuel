@@ -41,6 +41,13 @@ object mijo {
 	}
 }
 
+object mijo_alternativo {
+	var valorEstado
+	method mojarse() {valorEstado = 15}
+	method secarse() {valorEstado = 20}
+	method energiaPorGramo() {return valorEstado}
+}
+
 object canelones {
 	/*var tieneSalsa = false
 	var tieneQueso = false
