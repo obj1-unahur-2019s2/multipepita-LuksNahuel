@@ -1,4 +1,3 @@
-
 object alpiste {
 	method energiaPorGramo() { return 4 }
 }
@@ -7,41 +6,70 @@ object mondongo {
 	method energiaPorGramo() { return 100 }
 }
 
-// comida que esta fallada
 object bigMac {
 	method energiaPorGramo() { return 2 }
 }
 
-/*
- * el alcaucil da 20 joules por gramo
- */ 
 object alcaucil {
-	// completar
 	method energiaPorGramo() { return 20 }
 }
 
-/*
- * el sorgo da 9 joules por gramo
- */ 
 object sorgo {
-	// completar
 	method energiaPorGramo() { return 9 }
 }
 
-// despues, agregar mijo y canelones
 object mijo {
-	var estaMojado
-	method mojarse() {estaMojado = 15}
-	method secarse() {estaMojado = 20}
+	var estaMojado = false
+	method mojarse() {estaMojado = true}
+	method secarse() {estaMojado = false}
 	method energiaPorGramo() {
-		return estaMojado
+		if(estaMojado){
+			return 15 
+		} else {
+			return 20
 		}
+	}
 }
+
+object mijo_alternativo {
+	var valorEstado
+	method mojarse() {valorEstado = 15}
+	method secarse() {valorEstado = 20}
+	method energiaPorGramo() {return valorEstado}
+}
+
 object canelones {
-	var base = 20
-	method ponerSalsa() {base += 5}
-	method sacarSalsa() {base -= 5}
-	method ponerQueso() {base += 7}
-	method sacarQueso() {base -= 7}
-	method energiaPorGramo() {return base}
+	/*var tieneSalsa = false
+	var tieneQueso = false
+	method ponerSalsa() {tieneSalsa = true}
+	method sacarSalsa() {tieneSalsa = false}
+	method ponerQueso() {tieneQueso = true}
+	method sacarQueso() {tieneQueso = false}
+	method energiaPorGramo() {
+		if(tieneSalsa && tieneQueso) {
+			return 32
+		} else if(tieneSalsa) {
+			return 25
+		} else if(tieneQueso) {
+			return 27
+		} else {
+			return 20
+		}
+	}*/
+	var tieneSalsa = false
+	var tieneQueso = false
+	method ponerSalsa() { tieneSalsa = true }
+	method sacarSalsa() { tieneSalsa = false }
+	method ponerQueso() { tieneQueso = true }
+	method sacarQueso() { tieneQueso = false }
+	method energiaPorGramo() {
+		var energia = 20
+		if(tieneSalsa) {
+			energia +=  5
+		}
+		if(tieneQueso) {
+			energia += 7
+		}
+		return energia
+	}
 }

@@ -1,6 +1,3 @@
-/*
- * Copiar pepita.wlk y comidas.wlk desde etapa2
- */
 import pepita.pepita
 import comidas.*
 
